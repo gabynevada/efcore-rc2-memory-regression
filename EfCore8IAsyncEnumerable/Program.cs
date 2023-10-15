@@ -39,7 +39,7 @@ public class MyContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         var connectionString = "Server=localhost;Database=Test;user id=sa;password=MyP@ssword;TrustServerCertificate=True;";
-        options.UseSqlServer(connectionString);
+        options.UseSqlServer(connectionString, b => b.UseAzureSql());
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
